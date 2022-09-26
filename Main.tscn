@@ -1,0 +1,141 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Holes.gd" type="Script" id=1]
+[ext_resource path="res://Balls.gd" type="Script" id=2]
+[ext_resource path="res://Drawn Obstacles.gd" type="Script" id=3]
+[ext_resource path="res://Main.gd" type="Script" id=4]
+[ext_resource path="res://Background.jpg" type="Texture" id=5]
+[ext_resource path="res://pen.png" type="Texture" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 256, 2 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 145, 3 )
+
+[node name="MainWorld" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 200, 256 )
+rotation = 1.5708
+texture = ExtResource( 5 )
+
+[node name="Fixed Borders" type="Node2D" parent="."]
+
+[node name="Left" type="StaticBody2D" parent="Fixed Borders"]
+position = Vector2( 3, 256 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fixed Borders/Left"]
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="Right" type="StaticBody2D" parent="Fixed Borders"]
+position = Vector2( 397, 256 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fixed Borders/Right"]
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="Top" type="StaticBody2D" parent="Fixed Borders"]
+position = Vector2( 200, -104 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fixed Borders/Top"]
+shape = SubResource( 2 )
+
+[node name="BottomR" type="StaticBody2D" parent="Fixed Borders"]
+position = Vector2( 0, 400 )
+rotation = 0.785398
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fixed Borders/BottomR"]
+shape = SubResource( 2 )
+
+[node name="BottomL" type="StaticBody2D" parent="Fixed Borders"]
+position = Vector2( 400.891, 400 )
+rotation = 5.49779
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fixed Borders/BottomL"]
+shape = SubResource( 2 )
+
+[node name="Holes" type="Node2D" parent="."]
+script = ExtResource( 1 )
+
+[node name="Balls" type="Node2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="Drawn Obstacles" type="Node2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="Border Left" type="Node2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Border Left"]
+position = Vector2( -15, 101 )
+rotation = -0.785398
+scale = Vector2( 0.234299, 0.234299 )
+texture = ExtResource( 6 )
+offset = Vector2( 149.182, -54.7819 )
+
+[node name="Sprite2" type="Sprite" parent="Border Left"]
+position = Vector2( -15, 235 )
+rotation = -0.785398
+scale = Vector2( 0.234299, 0.234299 )
+texture = ExtResource( 6 )
+offset = Vector2( 149.182, -54.7819 )
+
+[node name="Sprite3" type="Sprite" parent="Border Left"]
+position = Vector2( -15, 368 )
+rotation = -0.785398
+scale = Vector2( 0.234299, 0.234299 )
+texture = ExtResource( 6 )
+offset = Vector2( 149.182, -54.7819 )
+
+[node name="Sprite4" type="Sprite" parent="Border Left"]
+position = Vector2( 65, 488 )
+rotation = -1.5708
+scale = Vector2( 0.234299, 0.234299 )
+texture = ExtResource( 6 )
+offset = Vector2( 149.182, -54.7819 )
+
+[node name="Border Left2" type="Node2D" parent="."]
+position = Vector2( 400, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Border Left2"]
+position = Vector2( -15, 101 )
+rotation = -0.785398
+scale = Vector2( 0.234299, 0.234299 )
+texture = ExtResource( 6 )
+offset = Vector2( 149.182, -54.7819 )
+
+[node name="Sprite2" type="Sprite" parent="Border Left2"]
+position = Vector2( -15, 235 )
+rotation = -0.785398
+scale = Vector2( 0.234299, 0.234299 )
+texture = ExtResource( 6 )
+offset = Vector2( 149.182, -54.7819 )
+
+[node name="Sprite3" type="Sprite" parent="Border Left2"]
+position = Vector2( -15, 368 )
+rotation = -0.785398
+scale = Vector2( 0.234299, 0.234299 )
+texture = ExtResource( 6 )
+offset = Vector2( 149.182, -54.7819 )
+
+[node name="Sprite4" type="Sprite" parent="Border Left2"]
+position = Vector2( -83.4689, 461.796 )
+scale = Vector2( 0.234299, 0.234299 )
+texture = ExtResource( 6 )
+offset = Vector2( 149.182, -54.7819 )
+
+[node name="HUD" type="Node2D" parent="."]
